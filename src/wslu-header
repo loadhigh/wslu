@@ -242,6 +242,7 @@ case $distro in
 	Scientific*) distro="scilinux";;
 	*Fedora\ Remix\ for\ WSL*) distro="fedoraremix";;
 	*Fedora*) distro="fedora";;
+  *Gentoo*) distro="gentoo";;
 	*Generic*) [ "fedora" == "$(grep -e "LIKE=" /etc/os-release | sed -e 's/ID_LIKE=//g')" ] && distro="oldfedora" || distro="unknown";;
 	*) distro="unknown";;
 esac

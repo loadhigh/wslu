@@ -97,6 +97,8 @@ case "$distro" in
 		packages=$(apk info | wc -l);;
 	'archlinux')
 		packages=$(pacman -Qq | wc -l);;
+  'gentoo')
+    packages=$(printf "%s\n" /var/db/pkg/*/*/ | wc -l);;
 esac
 
 ##  old version of fedora remix specific information

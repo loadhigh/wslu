@@ -6,7 +6,7 @@ lname=""
 help_short="$0 [-hvur]\n$0 LINK/FILE"
 
 function del_reg_alt {
-	if [ "$distro" == "archlinux" ] || [ "$distro" == "alpine" ]; then
+	if [ "$distro" == "archlinux" ] || [ "$distro" == "alpine" ] || [ "$distro" == "gentoo" ]; then
 		echo "${error} Unsupported action for this distro. Aborted. "
 		exit 34
 	else
@@ -17,7 +17,7 @@ function del_reg_alt {
 }
 
 function add_reg_alt {
-	if [ "$distro" == "archlinux" ] || [ "$distro" == "alpine" ]; then
+	if [ "$distro" == "archlinux" ] || [ "$distro" == "alpine" ] || [ "$distro" == "gentoo" ]; then
 		error_echo "Unsupported action for this distro. Aborted." 34
 	else
 		sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser "$(readlink -f "$0")" 30
